@@ -33,6 +33,11 @@ TODO
 
 TODO
 
+Mechanism: Publishing secret keys of signatures.
+To consider: signatures of Credentials and KeyPackages.
+TODO: give guidelines on timeframe
+TODO: what kind of deniability is this? A post-compromise offline deniability.
+
 # Security Considerations {#sec-considerations}
 
 And Privacy Considerations.
