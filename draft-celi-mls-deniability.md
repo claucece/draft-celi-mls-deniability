@@ -79,21 +79,55 @@ access to that key, then, can create arbitrary messages with it,
 and no one can attest that a particular user as the author of the
 message.
 
-As deniability have to preserve authentication, the private keys
+As deniability have to preserve authentication, the private key
 corresponding to the signature public key in use can only be
-revealed after messages are verified.
+revealed after messages are verified (and received). In a group
+set setting is almost impossible (TODO: find reference) to know
+when a message has been received by all members of a group, and
+coordinate between each other when to reveal the key. In order
+to solve this problem, we put the responsibility on the client:
+every time a client updates its KeyPackage, it should reveal the
+previous private signature key. Updating a KeyPackage can happen
+for different reasons:
 
-Mechanism: Publishing secret keys of signatures.
-To consider: signatures of Credentials and KeyPackages.
+* Update the signature key as there is fear of compromise
+* Update the algorithm associated with the signature key
+* Add an extension
+* Change the protocol version
+* It's validity period ended: this validity period can be configured
+  per client, and for the deniability extension MUST not be more
+  than one week.
+
+The application must signal the AS to generate new signature keys,
+reveal the old ones and use this new objects.
+
+The form of deniability given then can be similar to post-compromise
+security: deniability is healed after the keys are revealed, but
+for a time it can be compromised.
+
+In order to support this form of deniability the client MUST support
+the deniability extension on its KeyPackage object.
+
+This document defines the following MLS extension code point.
+
+~~~~~~~~~~
+   enum {
+     ...
+     deniable_mls(34),
+     (65535)
+   } ExtensionType;
+~~~~~~~~~~
+
+TODO: should the extension should be valid per group?
 TODO: give guidelines on timeframe
 TODO: what kind of deniability is this? A post-compromise offline deniability.
 TODO: where does the keys get published? How will this mechanism will work?
 TODO: the timeframe mechanism can be deniable themself, will this provide
       further proof for deniability?
-TODO: The two general problem state that it is never known when a message
-      is received.. can only the receiver reveal then?
 TODO: what happens when a client with the extension runs with another that
       do not suport the extension?
+TODO: talk about updating keys and messages that arrive way later after
+the keys have been expired.
 
 # Security Considerations {#sec-considerations}
 
