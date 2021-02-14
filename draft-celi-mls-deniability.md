@@ -99,7 +99,7 @@ for different reasons:
   than one week.
 
 The application must signal the AS to generate new signature keys,
-reveal the old ones and use this new objects.
+reveal the old ones and use these new objects.
 
 The form of deniability given then can be similar to post-compromise
 security: deniability is healed after the keys are revealed, but
