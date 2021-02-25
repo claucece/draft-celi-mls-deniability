@@ -31,7 +31,19 @@ casting shadow on the authentication of all sent traffic.
 
 # Introduction
 
-TODO
+DISCLAIMER: This is a work-in-progress draft.
+
+Deniable authentication is a property by which it cannot be proven
+that a message has been authored by anyone in a conversation, as
+anyone could have potentially authored that message. A protocol
+is deniable in regards to authentication if there is no valid
+evidence of its execution that can be used to proof authentication
+to a third party.
+
+It is proposed that deniability should be a property of secure
+messaging systems, as a common privacy goal. MLS a system proposed
+to achieve security in a group chat setting, in which deniability
+can be put as an extension to it.
 
 # Conventions and Terminology
 
@@ -40,8 +52,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "OPTIONAL" in this document are to be interpreted as described in BCP
 14 {{!RFC2119}} {{!RFC8174}} when, and only when, they appear in all
 capitals, as shown here.
-
-## Change Log
 
 # Requirements Notation
 
@@ -128,7 +138,6 @@ This document defines the following MLS extension code point.
 
 TODO: should the extension should be valid per group?
 TODO: give guidelines on timeframe
-TODO: what kind of deniability is this? A post-compromise offline deniability.
 TODO: where does the keys get published? How will this mechanism will work?
 TODO: the timeframe mechanism can be deniable themself, will this provide
       further proof for deniability?
@@ -139,8 +148,15 @@ the keys have been expired.
 
 # Security Considerations {#sec-considerations}
 
-And Privacy Considerations.
-TODO
+It is worth noting that in order for this kind of deniability to work,
+signature keys MUST be defined per device that participates in a group, and
+signature keys cannot be shared between devices.
+
+It should be taken into account that, as MLS supports out-of-order delivery,
+some messages might arrive after the signature key has been revealed.
+This mechanism weakens authentication in that regard, and for this
+reason, the time frame for revelation should be sufficiently big to handle
+most out-of-order cases but small enough to not hinder deniability.
 
 # IANA Considerations
 
