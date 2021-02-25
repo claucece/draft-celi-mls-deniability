@@ -160,6 +160,7 @@ most out-of-order cases but small enough to not hinder deniability.
 
 # IANA Considerations
 
-TODO
+This document registers the "deniable_mls" extension in the
+"MLS ExtensionType Values" registry.
 
 --- back
