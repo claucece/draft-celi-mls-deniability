@@ -14,11 +14,19 @@ pi: [toc, sortrefs, symrefs]
 author:
  -  ins: S. Celi
     name: Sofía Celi
+    org: Cloudflare
+    city: Lisbon
+    country: Portugal
+    email: cherenkov@riseup.net
+informative:
+  MLS: I-D.ietf-mls-protocol-11
 
 --- abstract
 
-TODO
-
+This document describes a mechanism to achieve weak deniability
+in MLS[I-D.ietf-mls-protocol-11] (MLS).  By revealing signature keys,
+participants beyond the conversation can forge transcripts of it,
+casting shadow on the authentication of all sent traffic.
 --- middle
 
 # Introduction
