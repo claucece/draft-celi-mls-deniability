@@ -31,7 +31,9 @@ casting shadow on the authentication of all sent traffic.
 
 # Introduction
 
-DISCLAIMER: This is a work-in-progress draft.
+DISCLAIMER: This is a work-in-progress draft and has not yet seen
+significant security analysis.  It should not be used as a basis for
+building production systems.
 
 Deniable authentication is a property by which it cannot be proven
 that a message has been authored by anyone in a conversation, as
