@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-03-16T00:05:07.979198+00:00",
+  "timestamp": "2021-03-18T00:05:07.877572+00:00",
   "repo": "claucece/draft-celi-mls-deniability",
   "labels": [
     {
@@ -49,6 +49,23 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "MDU6SXNzdWU4MzM3NDI5OTk=",
+      "title": "Consider metadata leakage",
+      "url": "https://github.com/claucece/draft-celi-mls-deniability/issues/1",
+      "state": "OPEN",
+      "author": "claucece",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "As pointed by @dkg on the latest IETF (IETF110), there should be a consideration between the metadata leakage of publishing the key and the need for deniability. This can be quite un-setteling and needs more consideration.\r\n\r\nIt could be better if a key is the same across groups and devices.\r\n\r\nThis is related to: https://github.com/mlswg/mls-protocol/pull/439",
+      "createdAt": "2021-03-17T12:59:22Z",
+      "updatedAt": "2021-03-17T12:59:22Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": []
 }
